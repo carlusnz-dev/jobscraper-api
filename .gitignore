@@ -1,0 +1,33 @@
+# Diretórios de Ambiente Python
+venv/
+__pycache__/
+
+# Diretórios de Python em Geral
+*.pyc
+*.pyo
+*.pyd
+
+# Diretórios de Python no VS Code (opcional, mas comum)
+.vscode/
+
+test.py
+
+# Diretórios de Backend (Se você usar Node.js ou NestJS/Angular depois)
+# Se você migrar jobscraper-back/front para Node/Angular:
+# /jobscraper-back/node_modules
+# /jobscraper-front/node_modules
+# /jobscraper-back/dist
+# /jobscraper-front/dist
+
+# Arquivos de Sistema (macOS e Windows)
+.DS_Store
+Thumbs.db
+
+# Arquivos de Log e Teste (opcional)
+*.log
+test.py # Se for um arquivo de teste temporário. Se for permanente, remova essa linha.
+
+# Diretórios específicos do seu projeto
+# Se você tiver algum diretório que armazena dados de scraping
+# ou logs sensíveis, adicione aqui.
+/data/
