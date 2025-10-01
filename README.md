@@ -1,4 +1,4 @@
-# JobScraper Web & Desktop (Job Aggregator)
+# JobScraper Web & Desktop (Job Aggregator) - Em desenvolvimento
 
 ## Visão geral
 JobScraper centraliza buscas de vagas (Gupy, InfoJobs, etc.) e retorna resultados em JSON. Dois componentes: API (scraping + processamento) e app desktop (consome a API).
