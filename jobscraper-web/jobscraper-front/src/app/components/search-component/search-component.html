@@ -1,0 +1,100 @@
+<div class="container p-6 mx-auto text-center">
+  <div class="max-w-2xl mx-auto">
+    <h1 class="text-4xl font-bold text-gray-800 sm:text-6xl">Find Your Next Job</h1>
+    <p class="my-4 text-lg tracking-wider text-gray-500">
+      Enter a keyword for a job title, technology, or company.
+    </p>
+  </div>
+
+  <form class="flex mx-auto my-10 gap-x-2 max-w-xl">
+    <input
+      type="text"
+      placeholder="Ex: full stack dev, python analyst, ui/ux designer"
+      class="w-full p-4 text-lg bg-white border-2 border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow placeholder:text-gray-400 placeholder:italic"
+    />
+    <button
+      type="submit"
+      class="flex-shrink-0 p-4 text-white bg-indigo-600 rounded-lg shadow-sm cursor-pointer hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors"
+    >
+      <ng-icon name="featherSearch" size="28" />
+    </button>
+  </form>
+
+  <div class="max-w-4xl mx-auto mt-12">
+    <h3 class="mb-4 text-lg font-bold text-gray-600">Advanced Filters</h3>
+    <form class="grid grid-cols-1 gap-4 text-left sm:grid-cols-2 md:grid-cols-4">
+      <div id="FilterLocation">
+        <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
+        <input
+          type="text"
+          id="location"
+          placeholder="Ex: San Francisco, CA"
+          class="w-full p-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
+
+      <div id="FilterJobType">
+        <label for="job-type" class="block text-sm font-medium text-gray-700">Job Type</label>
+        <select
+          id="job-type"
+          class="w-full p-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        >
+          <option>All</option>
+          <option>Full-time</option>
+          <option>Part-time</option>
+          <option>Contract</option>
+        </select>
+      </div>
+
+      <div id="FilterPlatform">
+        <label for="platform" class="block text-sm font-medium text-gray-700">Platform</label>
+        <select
+          id="platform"
+          class="w-full p-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        >
+          <option>All</option>
+          <option>Gupy</option>
+          <option>InfoJob</option>
+        </select>
+      </div>
+
+      <div id="FilterLanguages">
+        <label class="block text-sm font-medium text-gray-700">Programming Languages</label>
+        <fieldset class="mt-2 space-y-2">
+          <div class="flex items-center">
+            <input
+              id="lang-js"
+              type="checkbox"
+              class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+            />
+            <label for="lang-js" class="ml-2 text-sm text-gray-600">JavaScript</label>
+          </div>
+          <div class="flex items-center">
+            <input
+              id="lang-python"
+              type="checkbox"
+              class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+            />
+            <label for="lang-python" class="ml-2 text-sm text-gray-600">Python</label>
+          </div>
+          <div class="flex items-center">
+            <input
+              id="lang-java"
+              type="checkbox"
+              class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+            />
+            <label for="lang-java" class="ml-2 text-sm text-gray-600">Java</label>
+          </div>
+          <div class="flex items-center">
+            <input
+              id="lang-cpp"
+              type="checkbox"
+              class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+            />
+            <label for="lang-cpp" class="ml-2 text-sm text-gray-600">C++</label>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+</div>
