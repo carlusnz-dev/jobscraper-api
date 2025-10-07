@@ -1,12 +1,96 @@
 <div class="min-h-screen" id="HomePage">
-
   <!-- Title Page -->
   <div class="flex flex-col text-center justify-center items-center min-h-[80vh] mb-12">
     <h1 class="text-4xl md:text-7xl font-bold">JobScraper API</h1>
-    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, laudantium?</p>
+    <p class="lead">It's time now to find your job, it's easy here</p>
   </div>
 
   <!-- Filter search -->
-   <app-search-component></app-search-component>
+  <app-search-component></app-search-component>
 
+  <!-- Last jobs -->
+  <div class="bg-neutral-100 min-h-[80vh] my-12 md:my-28">
+    <div class="container mx-auto flex flex-col py-8 sm:py-12 px-6 sm:px-12">
+      <h1 class="text-3xl md:text-5xl font-semibold">Latest jobs found</h1>
+      <p class="text-lg sm:text-2xl mb-3">Today is {{ hourToday.toLocaleDateString() }}</p>
+
+      <!-- PC View -->
+      <div class="hidden md:block">
+        <div
+          class="grid grid-cols-[3fr_2fr_1.5fr_1.5fr_1fr] gap-4 py-3 mb-2 border-b-2 border-gray-300 font-bold text-lg"
+        >
+          <p>Título & Empresa</p>
+          <p>Descrição</p>
+          <p>Ocupação</p>
+          <p>Tipo</p>
+          <p class="text-center">Ação</p>
+        </div>
+
+        @for (job of jobFounds; track job.id) {
+          <div
+            class="grid grid-cols-[3fr_2fr_1.5fr_1.5fr_1fr] gap-4 py-3 border-b border-gray-200 hover:bg-neutral-200 transition duration-150 ease-in-out items-center"
+          >
+            <div>
+              <p class="font-bold text-blue-800">{{ job.title }}</p>
+              <p class="text-sm text-gray-600">{{ job.companion }}</p>
+            </div>
+
+            <p class="text-sm line-clamp-2" title="{{ job.description }}">{{ job.description }}</p>
+
+            <p>{{ job.occupation }}</p>
+
+            <div class="flex items-center">
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                >{{ job.type }}</span
+              >
+            </div>
+
+            <div class="text-center">
+              <a
+                class="text-sm text-blue-600 hover:underline font-medium whitespace-nowrap"
+                href="{{ job.title }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver Vaga
+              </a>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Mobile View -->
+      <div class="md:hidden space-y-4">
+        @for (job of jobFounds; track job.id) {
+          <div class="border rounded-lg p-4 shadow-md bg-white">
+            <h3 class="text-xl font-bold text-blue-800 mb-1">{{ job.title }}</h3>
+            <p class="text-sm text-gray-600 mb-3">{{ job.companion }}</p>
+
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                >{{ job.type }}</span
+              >
+              <span
+                class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                >{{ job.occupation }}</span
+              >
+            </div>
+
+            <p class="text-sm text-gray-700 mb-4 line-clamp-3">{{ job.description }}</p>
+
+            <a
+              class="text-sm text-blue-600 hover:underline font-medium inline-flex items-center"
+              href="{{ job.title }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Detalhes
+            </a>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
 </div>
