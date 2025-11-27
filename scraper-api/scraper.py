@@ -9,7 +9,7 @@ def search_all_jobs_gupy(job_name):
     
     # Mount page
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=50)
+        browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.goto(f'{base_url}?page=1')
         current_page = 1
