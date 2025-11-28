@@ -5,10 +5,31 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model Site {
+  id Int @id @default(autoincrement())
+  siteName String @map("site_name")
+  link String
+  jobs Jobs[]
+
+  @@map("sites")
+}
+
+model Jobs {
+  id Int @id @default(autoincrement())
+  jobName String @map("job_name")
+  companion String?
+  description String @db.Text
+  link String @db.Text
+  siteId Int @map("site_id")
+  site Site @relation(fields: [siteId], references: [id])
+
+  @@map("jobs")
 }

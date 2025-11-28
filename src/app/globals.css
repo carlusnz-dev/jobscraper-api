@@ -34,3 +34,14 @@ body {
     color: #555555;
     font-size: 1.2rem;
 }
+
+.badge {
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.badge.light {
+    background-color: #ffffff;
+    color: var(--foreground);
+}
